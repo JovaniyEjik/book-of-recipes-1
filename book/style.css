@@ -54,11 +54,12 @@ html, body{
 .search{
     width: 80%;
     height: 80%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    position: relative;
+    background-color: #ffe6c6;
+    padding: 20px;
+    box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.091);
+    border: 5px solid black;
     margin: calc(10% / 6);
     border-radius: 20px ;
     display: flex;
@@ -74,12 +75,12 @@ html, body{
     width: 90%;
     height: 8%;
     border-radius: 10px;
-    border: none;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    
+    background-color: rgba(186, 50, 50, 0.351);
+   
+    box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.091);
     border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+   
     text-align: center;
     color: aliceblue;
     font-size: 150%;

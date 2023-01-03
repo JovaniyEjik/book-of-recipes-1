@@ -50,26 +50,31 @@ let ourBase = {
             "fish":{
                 "name": "fish1",
                 "ing":"mooka flover opopo",
-                "op":'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed culpa distinctio rerum voluptates ipsam, quas, dolor illum minima unde tempore ab fuga animi. Error natus unde incidunt nostrum placeat expedita?Quaerat veniam delectus natus a accusantium rerum aliquam, quos corrupti nihil fugit quidem, distinctio libero harum exercitationem impedit beatae unde quas iste, veritatis rem. Nisi accusantium iusto consequuntur iste ipsam?Ipsam vel nam consequatur excepturi necessitatibus, totam earum ullam, laborum, maxime molestias aspernatur culpa. Quibusdam, ducimus! Quasi, animi! Laudantium incidunt fuga unde ipsam quaerat nisi similique veniam totam alias animi?'
+                "op":'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed culpa distinctio rerum voluptates ipsam, quas, dolor illum minima unde tempore ab fuga animi. Error natus unde incidunt nostrum placeat expedita?Quaerat veniam delectus natus a accusantium rerum aliquam, quos corrupti nihil fugit quidem, distinctio libero harum exercitationem impedit beatae unde quas iste, veritatis rem. Nisi accusantium iusto consequuntur iste ipsam?Ipsam vel nam consequatur excepturi necessitatibus, totam earum ullam, laborum, maxime molestias aspernatur culpa. Quibusdam, ducimus! Quasi, animi! Laudantium incidunt fuga unde ipsam quaerat nisi similique veniam totam alias animi?',
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             },
             "rr":{
                 "name": "fish2",
                 "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld"
+                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             },
             "op":{
                 "name": "fish3",
                 "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld"
+                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             }
         }
+        
     },
     "0912-24":{
         "dishes":{
             "fish":{
                 "name": "fish7",
                 "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld"
+                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             }
         }
     },
@@ -79,7 +84,8 @@ let ourBase = {
             "op":{
                 "name": "fish8",
                 "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld"
+                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             }
         }
     },
@@ -88,22 +94,26 @@ let ourBase = {
             "fish":{
                 "name": "fish5",
                 "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld"
+                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             },
             "rr":{
                 "name": "fish3",
                 "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld"
+                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             },
             "op":{
                 "name": "fish8",
                 "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld"
+                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             },
             "oIp":{
                 "name": "fishiiii8",
                 "ing":"mooka floveseerr opopo",
-                "op":"asldkjalsjdalersdjalksjdaksdjladjlskdjksjdld"
+                "op":"asldkjalsjdalersdjalksjdaksdjladjlskdjksjdld",
+                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
             }
         }
     }
@@ -119,12 +129,12 @@ let makePages = () => {
         let dish = Object.keys(ourBase[el].dishes);
         
         dish.forEach((dis,i) => {
-          
+            console.log(ourBase[el].dishes[dis].images[0]);
            document.querySelector('#flipbook').insertAdjacentHTML('beforeend',`
            <div class="page">
                 <h2>${ourBase[el].dishes[dis].name}</h2>
                 <div class="blockW">
-                  <div class="img"></div>
+                  <div class="img" style = "background: url('${ourBase[el].dishes[dis].images[0]}') no-repeat;background-size:cover;"></div>
                   <div class="ing">
                     <p>
                     ${ourBase[el].dishes[dis].ing}
