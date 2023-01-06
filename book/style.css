@@ -15,19 +15,22 @@ font-family: 'Russo One';
 html, body{
     height: 100%;
     overflow: hidden;
+    
 }
 
-
-.wrapper{
-    width: 100%;
-    height: 100%;
+body{
+    background: url('assets/bg.jpg') no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('img/bg.jpg');
+    flex-direction: column;
+    position: relative;
 }
-.wrapper::before{
-    content: '';
+
+
+.beforeBlock{
+    
     width: 100%;
     height: 100%;
    position: absolute;
@@ -35,8 +38,19 @@ html, body{
     z-index: 1;
 }
 
+
+.wrapper{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
 .searchzone{
-    width: 30%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -53,13 +67,10 @@ html, body{
 
 .search{
     width: 80%;
-    height: 80%;
-    
-    position: relative;
-    background-color: #ffe6c6;
-    padding: 20px;
-    box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.091);
-    border: 5px solid black;
+    height: 75%;
+    background: #ab7048;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    padding: 5%;
     margin: calc(10% / 6);
     border-radius: 20px ;
     display: flex;
@@ -74,21 +85,19 @@ html, body{
 .inpSearch{
     width: 90%;
     height: 8%;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: none;
+    background: #ffffff;
+    border:1px solid rgba(75, 38, 20, 0.18);
     
-    background-color: rgba(186, 50, 50, 0.351);
-   
-    box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.091);
-    border:1px solid rgba(255, 255, 255, 0.18);
-   
     text-align: center;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     font-size: 150%;
     
 
 }
 .inpSearch::placeholder{
-    color: aliceblue;
+    color: black;
 }
 
 .searchBtn{
@@ -98,7 +107,7 @@ html, body{
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+   
     border-radius: 20px;
     text-align: center;
     font-size: 100%;
@@ -120,11 +129,8 @@ html, body{
 .placeOfRec{
     width: 90%;
     height: 85%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.106), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+ 
     border-radius: 10px;
     margin: calc(7% / 3);
     display: flex;
@@ -140,7 +146,7 @@ html, body{
     justify-content: center;
     align-items: center;
     
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
     z-index: 3;
 }
 
@@ -158,10 +164,14 @@ html, body{
 }
 
 .first-page{
-    background: #804721
+    background: url('assets/book-page-first.png') no-repeat;
+    background-size: cover;
+    background-position-y: 100%;
 }
 .last-page{
-    background: #804721;
+    background: url('assets/book-page-last.png') no-repeat;
+    background-size: cover;
+    background-position-y: 100%;
 }
 
 
@@ -176,7 +186,7 @@ html, body{
     position: absolute;
     left: 2%;
     top: 87%;
-    background: url('img/next.png') no-repeat;
+    background: url('assets/next.png') no-repeat;
     background-size: 100%;
     cursor: pointer;
 }
@@ -187,10 +197,11 @@ html, body{
     position: absolute;
     left: 83%;
     top: 86.9%;
-    background: url('img/next.png') no-repeat;
+    background: url('assets/next.png') no-repeat;
     background-size: 100%;
     cursor: pointer;
     transform: scale(-1,1);
+    z-index: 3;
 }
 
 
@@ -215,10 +226,11 @@ html, body{
 
 .page p{
     font-family: 'Lobster', cursive;
+    font-size: 100%;
 }
 .page h2{
     font-family: 'Lobster', cursive;
-    cursor: pointer;
+    margin: 3%;
 }
 
 .blockW .img{
@@ -272,14 +284,14 @@ html, body{
 .numL{
     color: black;
     position: absolute;
-    top: 97%;
+    top: 95%;
     left: 3%;
 }
 
 .numR{
     color: black;
     position: absolute;
-    top: 97%;
+    top: 95%;
     left: 97%;
 }
 
@@ -287,11 +299,420 @@ html, body{
 
 
 .rec{
-    width: 100%;
+    width: 95%;
     height: 7%;
-    
+    margin: 2.5%;
+    background: #ffd8a9;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+
+
+.str{
+    width: 15%;
+    height: 10%;
+    background: #8a0000;
+    position: absolute;
+    left: 65%;
+    top: 0;
+    clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 66%, 81% 85%, 66% 100%, 34% 100%, 19% 85%, 0 66%);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1550px) {
+    .inpSearch{
+        
+        font-size: 130%;
+        
+    
+    }
+    .page p{
+        
+        font-size: 100%;
+    }
+    
+}
+
+
+@media screen and (max-width: 1300px) {
+    .inpSearch{
+        font-size: 110%;
+    }
+    
+}
+
+
+@media screen and (max-width: 1150px) {
+    .inpSearch{
+        font-size: 100%;
+    }
+    
+}
+
+
+@media screen and (max-width: 1063px) {
+    .inpSearch{
+        font-size: 90%;
+    }
+    .page p{
+        
+        font-size: 90%;
+    }
+    
+}
+
+@media screen and (max-width: 960px) {
+    .inpSearch{
+        font-size: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    
+    .page p{
+        
+        font-size: 80%;
+    }
+    .str{
+        left: 5%;
+    }
+    
+    
+    
+}
+
+@media screen and (max-width: 500px) {
+    .inpSearch{
+        font-size: 55%;
+    }
+    .page p{
+        
+        font-size: 62%;
+    }
+    .numL{
+        color: black;
+        position: absolute;
+        top: 95%;
+        left: 5%;
+    }
+    
+    .numR{
+        color: black;
+        position: absolute;
+        top: 95%;
+        left: 95%;
+    }
+    
+    
+}
+
+@media screen and (max-width: 400px) {
+    .inpSearch{
+        font-size: 47%;
+    }
+    .page p{
+        
+        font-size: 58%;
+    }
+    
+    
+}
+
+
+@media screen and (max-width: 360px) {
+    .inpSearch{
+        font-size: 45%;
+    }
+    .page p{
+        
+        font-size: 55%;
+    }
+    
+}
+
+
+@media screen and (max-width: 300px) {
+    .inpSearch{
+        font-size: 40%;
+    }
+    .page p{
+        
+        font-size: 50%;
+    }
+    
+}
+
+
+@media screen and (max-width: 250px) {
+    .inpSearch{
+        font-size: 20%;
+    }
+    .page p{
+        
+        font-size: 40%;
+    }
+    
+}
+
+
+.top-bar {
+    width: 100%;
+    height: 7%;
+    border-bottom: 2px solid white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    backdrop-filter: blur(15px);
+    -webkit-box-shadow: 0 2px 5px 0 black;
+            box-shadow: 0 2px 5px 0 black;
+    z-index: 1;
+    color: #ffffff;
+  }
+  
+
+  
+  .ll{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0;
+    left: 0;
+  }
+  
+  .logo {
+    background:  white;
+    margin-right: 5%;
+    width: 7%;
+    height: 90%;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+  
+.name {
+    font-size: 250%;
+  }
+  
+  
+  .account{
+    position: absolute;
+    cursor: pointer;
+    min-width: 2%;
+    height: 90%;
+    background: rgba(128, 128, 128, 0.462);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+    left: 65%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+
+
+  .logor{
+    width: 19%;
+    height: 90%;
+    background: black;
+    border-radius: 50%;
+    margin-right: 2px;
+  }
+
+
+  .namer{
+    margin-right: 2px;
+    font-size: 100%;
+  }
+  
+
+
+  
+
+
+  @media screen and (max-width: 1550px) {
+    .inpSearch{
+        
+        font-size: 130%;
+        
+    
+    }
+    .page p{
+        
+        font-size: 100%;
+    }
+
+    .namer{
+        font-size: 100%;
+    }
+    
+}
+
+
+@media screen and (max-width: 1300px) {
+    .inpSearch{
+        font-size: 110%;
+    }
+    
+}
+
+
+@media screen and (max-width: 1150px) {
+    .inpSearch{
+        font-size: 100%;
+    }
+    
+}
+
+
+@media screen and (max-width: 1063px) {
+    .inpSearch{
+        font-size: 90%;
+    }
+    .page p{
+        
+        font-size: 90%;
+    }
+    .name{
+        font-size: 200%;
+    }
+
+    .namer{
+        font-size: 90%;
+    }
+    
+}
+
+@media screen and (max-width: 960px) {
+    .inpSearch{
+        font-size: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    
+    .page p{
+        
+        font-size: 80%;
+    }
+    .str{
+        left: 5%;
+    }
+    
+    .name{
+        font-size: 150%;
+    }
+
+    .namer{
+        font-size: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .inpSearch{
+        font-size: 55%;
+    }
+    .page p{
+        
+        font-size: 62%;
+    }
+    .numL{
+        color: black;
+        position: absolute;
+        top: 95%;
+        left: 5%;
+    }
+    
+    .numR{
+        color: black;
+        position: absolute;
+        top: 95%;
+        left: 95%;
+    }
+
+    .name{
+        font-size: 100%;
+    }
+
+    .namer{
+        font-size: 90%;
+    }
+    
+    
+}
+
+@media screen and (max-width: 400px) {
+    .inpSearch{
+        font-size: 47%;
+    }
+    .page p{
+        
+        font-size: 58%;
+    }
+    
+    .name{
+        font-size: 80%;
+    }
+    .namer{
+        font-size: 70%;
+    }
+    
+}
+
+
+@media screen and (max-width: 360px) {
+    .inpSearch{
+        font-size: 45%;
+    }
+    .page p{
+        
+        font-size: 46%;
+    }
+    
+}
+
+
+@media screen and (max-width: 300px) {
+    .inpSearch{
+        font-size: 40%;
+    }
+    .page p{
+        
+        font-size: 46%;
+    }
+
+    .namer{
+        font-size: 50%;
+    }
+    
+}
+
+
+@media screen and (max-width: 250px) {
+    .inpSearch{
+        font-size: 20%;
+    }
+    .page p{
+        
+        font-size: 40%;
+    }
+    .namer{
+        font-size: 40%;
+    }
+    
 }

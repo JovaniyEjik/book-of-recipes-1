@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+  <div class="beforeBlock"></div> 
   
-    
+  <div class="top-bar">
+ 
+        <div class="ll">
+          <div class="logo"></div>
+        <div class="name">KUSHOESEN</div>
+        </div>
+        <div class="account">
+          <div class="logor"></div>
+          <div class="namer">Mikudddddddddssssssss</div>
+        </div>
+  </div>
       
        <div class="wrapper">
-        <div class="searchzone">
-          <div class="search">
-            <input type="text" class="inpSearch" placeholder="Найди любимое блюдо">
-            <div class="placeOfRec">
-              <div class="searchBtn" onclick="searchFn()">
-                <p>Поиск</p>
-              </div>
-              
-              <div class="recepts"></div>
-            </div>
-          </div>
         
-          </div>
           <div class="bookzone">
 
             <div id="flipbook">
@@ -42,247 +42,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="turnjs4/lib/turn.js"></script>
 
-<script>
-
-let ourBase = {
-    "0912-23":{
-        "dishes":{
-            "fish":{
-                "name": "fish1",
-                "ing":"mooka flover opopo",
-                "op":'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed culpa distinctio rerum voluptates ipsam, quas, dolor illum minima unde tempore ab fuga animi. Error natus unde incidunt nostrum placeat expedita?Quaerat veniam delectus natus a accusantium rerum aliquam, quos corrupti nihil fugit quidem, distinctio libero harum exercitationem impedit beatae unde quas iste, veritatis rem. Nisi accusantium iusto consequuntur iste ipsam?Ipsam vel nam consequatur excepturi necessitatibus, totam earum ullam, laborum, maxime molestias aspernatur culpa. Quibusdam, ducimus! Quasi, animi! Laudantium incidunt fuga unde ipsam quaerat nisi similique veniam totam alias animi?',
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            },
-            "rr":{
-                "name": "fish2",
-                "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            },
-            "op":{
-                "name": "fish3",
-                "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            }
-        }
-        
-    },
-    "0912-24":{
-        "dishes":{
-            "fish":{
-                "name": "fish7",
-                "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            }
-        }
-    },
-    "0912-":{
-        "dishes":{
-           
-            "op":{
-                "name": "fish8",
-                "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            }
-        }
-    },
-    "0912-939393":{
-        "dishes":{
-            "fish":{
-                "name": "fish5",
-                "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            },
-            "rr":{
-                "name": "fish3",
-                "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            },
-            "op":{
-                "name": "fish8",
-                "ing":"mooka flover opopo",
-                "op":"asldkjalsjdalsdjalksjdaksdjladjlskdjksjdld",
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            },
-            "oIp":{
-                "name": "fishiiii8",
-                "ing":"mooka floveseerr opopo",
-                "op":"asldkjalsjdalersdjalksjdaksdjladjlskdjksjdld",
-                images:['https://img.delo-vcusa.ru/2021/02/ovsyanaya-kasha-na-moloke-s-medom.jpg']
-            }
-        }
-    }
-}
-
-
-let makePages = () => {
-  
-  document.querySelector('#flipbook').insertAdjacentHTML('beforeend',`<div class ="page first-page hard"></div>`)
-    let keys = Object.keys(ourBase);
-    keys.forEach((el,i) =>{
-      
-        let dish = Object.keys(ourBase[el].dishes);
-        
-        dish.forEach((dis,i) => {
-            console.log(ourBase[el].dishes[dis].images[0]);
-           document.querySelector('#flipbook').insertAdjacentHTML('beforeend',`
-           <div class="page">
-                <h2>${ourBase[el].dishes[dis].name}</h2>
-                <div class="blockW">
-                  <div class="img" style = "background: url('${ourBase[el].dishes[dis].images[0]}') no-repeat;background-size:cover;"></div>
-                  <div class="ing">
-                    <p>
-                    ${ourBase[el].dishes[dis].ing}
-                    </p>
-                  </div>
-                </div>
-                <div class="op">
-                  <p>${ourBase[el].dishes[dis].op}</p>
-                </div>
-               <div class="btn">
-                <p>Перейти к рецепту</p>
-               </div>
-              </div>
-           `)
-        })
-    })
-
-    if(document.querySelectorAll('.page').length % 2 == 0){
-      document.querySelector('#flipbook').insertAdjacentHTML('beforeend',`<div class ="page  hard"></div>`)
-    }
-    document.querySelector('#flipbook').insertAdjacentHTML('beforeend',`<div class ="page last-page hard"></div>`)
-    let ppp = document.querySelectorAll('.page');
-    ppp[1].classList.add('hard')
-}
-
-makePages();
-
-  let pageEdit = (pages) => {
-
-  for(let i = 0;i < pages.length;i++){
-    if(i % 2 != 0){
-      pages[i].style.borderRadius = '20px 0 0 20px'
-      
-      if(i != 0 && i != pages.length-1){
-        pages[i].style.background = '#fdd4a2'
-        pages[i].insertAdjacentHTML('beforeend','<div class="back" onclick="back()"></div>')
-        pages[i].insertAdjacentHTML('beforeend',`<p class="numL">${i}</p>`)
-      }
-    }
-    else if(i != 0 && i != pages.length-1){
-      pages[i].style.borderRadius = '0 20px 20px 0'
-      pages[i].insertAdjacentHTML('beforeend','<div class="next" onclick="next()"></div>')
-      pages[i].insertAdjacentHTML('beforeend',`<p class="numR">${i}</p>`)
-    }
-    else if(i != pages.length-1){
-      pages[i].style.borderRadius = '0 20px 20px 0'
-    }
-  }
-}
-pageEdit(document.querySelectorAll('.page'))
-
-
-
-let widthL = +window.getComputedStyle(document.querySelector('.bookzone')).width.slice(0, -2) * 0.85 ;
-let heightL = +window.getComputedStyle(document.querySelector('.bookzone')).height.slice(0, -2) * 0.85;
-
-$("#flipbook").turn({
-  width: widthL,
-  height: heightL,
-  autoCenter: true
-});
-let numPage = 1;
-$("#flipbook").bind("turning", function(event, page, view) {
-return numPage=page;
-});
-
-
-
-let next = () => { $("#flipbook").turn('next')}
-
-let back = () => {
-  $("#flipbook").turn('page',numPage-1);
-  return numPage--;
-}
-
-
-let searchFn = () => {
-  let recepsSearch = document.querySelectorAll('.rec');
-  recepsSearch.forEach(el => el.remove());
-  let allR = [];
-   Object.keys(ourBase).forEach((el,i) =>{
-         Object.keys(ourBase[el].dishes).forEach((dis,i) => {
-          allR.push(ourBase[el].dishes[dis].name)
-        })
-    })
-    let req = document.querySelector('.inpSearch').value;
-    
-      let answ = [];
-      
-      allR.forEach((rec,j) => {
-        
-        for(let i =0;i < rec.length;i++){
-          if(rec[i] == req[0]){
-            
-            for(let z = i; z < i+req.length;z++){
-
-              if(rec[z] != req[z]){
-                
-                break;
-              }
-              else if(z == i+req.length-1){
-                
-                answ.push(rec);
-              }
-            }
-          }
-        }
-      })
-    
-   answ.forEach((el,i)=>{
-    document.querySelector('.recepts').insertAdjacentHTML('beforeend',`<div class="rec" onclick = "recPer(${i})"><p>${el}</p></div>`)
-   })
-}
-
-let recPer = (i) =>{
-  
-  if(numPage < i+2){
-    let r = numPage+1;
-    let time = setInterval(()=>{
-      if(r < i+3){
-        
-        $("#flipbook").turn('page',r)
-        r++;
-      }
-      else{
-        
-        clearInterval(time);
-      }
-    },150)
-  }
-  else{
-    let r = numPage-1;
-    let time = setInterval(()=>{
-      if(r > i+1){
-        
-        $("#flipbook").turn('page',r)
-        r--;
-      }
-      else{
-        
-        clearInterval(time);
-      }
-    },150)
-  }
-  return numPage = i+2;
-}
-
-
+<script src="script.js">
 </script>
 
 </body>
